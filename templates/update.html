@@ -1,0 +1,40 @@
+{% extends "navbar.html" %} 
+
+{% block body %}
+<div class="container mb-3">
+  <form action="/update/{{todo.sno}}" method="POST">
+    
+    
+    <h2 class="mx-2" href="#">Update Your Todos</h2>
+    <br><br>
+    <div class="mb-3">
+      <label for="Title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        value="{{todo.title }}"
+        aria-describedby="title"
+      />
+
+    </div>
+
+    
+    <div class="mb-3">
+      <label for="task" class="form-label">Add Task Description</label>
+      <input
+        type="text"
+        value="{{todo.desc }}"
+        name="desc"
+        id="desc"
+        class="form-control"
+        id="exampleInputPassword1"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-outline-success">Update</button>
+  </form>
+</div>
+
+{% endblock body%}
